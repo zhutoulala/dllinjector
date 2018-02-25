@@ -85,7 +85,7 @@ HANDLE attachToProcess(DWORD procID) {
 			printf("\t[+] Detected Windows Vista\n");
 			return NULL;
 		}
-		if (osver.dwMajorVersion == 6 && osver.dwMinorVersion == 1)	{
+		if (osver.dwMajorVersion == 6 && osver.dwMinorVersion >= 1)	{
 			printf("\t[+] Detected Windows 7\n");
 			printf("\t[+] Attaching to Process ID: %d\n", procID);
 			return OpenProcess( PROCESS_CREATE_THREAD | PROCESS_QUERY_INFORMATION | PROCESS_VM_OPERATION | PROCESS_VM_WRITE | PROCESS_VM_READ, FALSE, procID );
